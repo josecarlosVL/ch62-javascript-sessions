@@ -68,3 +68,59 @@ console.log(weatherForecast(45));
 console.log(weatherForecast(48));
 console.log(weatherForecast(50));
 console.log(weatherForecast("asa"));
+
+const getAccessLevel = ( role ) => {
+    let accessLevel;
+    switch ( role ) {
+        case "admin":
+            accessLevel = "Acceso completo al sistema";
+            break;
+        case "editor":
+            accessLevel = "Acceso para editar contenido";
+            break;  
+        case "viewer":
+            accessLevel = "Acceso solo para ver contenido";
+            break;
+        default:
+            accessLevel = "Acceso denegado";
+    }
+    return accessLevel;
+};
+console.log( getAccessLevel("editor") ); // Acceso para editar contenido
+
+const weatherForecast2 = weatherCode =>{
+  let message;
+  switch(weatherCode){
+    case 0:
+      message = "Clear sky";
+      break;
+    case 1: case 2: case 3:
+      message = "Mainly clear, partly cloudy, overcast";
+      break;
+    case 45: case 48:
+      message = "Fog, Depositing rime fog";
+      break;
+    default:
+      message = "Can't tell the weather forecast";
+      break;
+  }
+  return message;
+}
+console.log(weatherForecast2(0));
+console.log(weatherForecast2(1));
+console.log(weatherForecast2(2));
+console.log(weatherForecast2(3));
+console.log(weatherForecast2(45));
+console.log(weatherForecast2(48));
+console.log(weatherForecast2(50));
+console.log(weatherForecast2("asa"));
+
+let userAge = 20;
+const votingElegibility =(age) => {
+  return age > 18 ? "Puede votar" : "No puede votar";
+}
+console.log(votingElegibility(userAge));
+
+const evenOdd = number => number%2 ? "Impar" : "Par";
+console.log(evenOdd(5));
+console.log(evenOdd(8));
