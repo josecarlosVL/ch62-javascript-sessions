@@ -63,27 +63,32 @@ console.log(`Usando la función potencia: ${calculate( 5, 3, (a,b)=>a**b)}`); //
 console.log(`Usando la función residuo: ${calculate( 6, 3, remainder)}`);
 
 
-var a = 10;  //variable global, no variable de funcion
+
+// Aplicar una función que calcule la potencia de un número
+console.log(`Realizando una división: ${calculate(6, 3, (a, b) => a ** b ) }`); // Math.pow(a,b) 
+// Aplicar una función que calcule el residuo de una devisión, para saber si 6 es divisible entre 3
+console.log(`residuo de 7 entre 3 ${calculate(7, 3, (a,b)=> a%b )}`); // 1
+
+var a = 10;
 let b = 20;
 const c = 30;
 const d = 40;
 const e = 50;
 const f = 60;
-const g = 70; //El alcance de esta variable es global, entra en la funcion cambiarValores porque no hay otra variable g dentro de la funcion
+const g = 70;
 
-const cambiarValores = (a, b, c) => {  //No confundir, aunque se llamen igual, estas variables a,b,c son locales a la funcion cambiarValores, no son las mismas que las globales declaradas arriba
 
+const cambiarValores = (a, b, c) => {
   /*
 
-  Muchas instrucciones
+   Muchas instrucciones
 
-  */
-    a = 100; //Cambia solo la copia local, no la variable global
-    b = 200; //Cambia solo la copia local, no la variable global
-    c = 300; //Cambia solo la copia local, no la variable global
-    var d = 400; //Variable local a la funcion
-    let e = 500; //Variable local a la funcion
-    const f = 600; //Variable local a la funcion
-    console.log (a,b,c);
-
-};
+  */ 
+  a = 100;
+  b = 200;
+  c = 300;
+  var d = 400;
+  let e = 500;
+  const f = 600;
+  console.log(a, b, c);
+}
