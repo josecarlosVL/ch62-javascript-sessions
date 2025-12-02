@@ -76,3 +76,103 @@ console.log("Lista actual:", shoppingList);
 // 4. shift(): Elimina el PRIMERO y lo devuelve
 const firstRemoved = shoppingList.shift();
 console.log(`Eliminado con shift: ${firstRemoved}`); // "Café"
+
+// --- Método splice() ---
+// Permite eliminar o agregar elementos en cualquier posición
+const colors = ["Rojo", "Verde", "Azul", "Amarillo", "Morado", "Naranja"];
+
+// TODO EJERCICIO RÁPIDO:
+// 1. Crea un array 'guestList' con 2 nombres.
+// 2. Agrega un invitado al final.
+// 3. Agrega un invitado al principio
+// 4. Elimina al segundo invitado (índice 1) y agrega a otro en su lugar.
+// 4. Muestra la lista fina
+
+const guestList = ["Juan","Ana"];
+console.log("Lista Inicial:",guestList.join(" - "));
+guestList.push("Carlos");
+console.log("Se agrega invitado al final:",guestList.join(" - "));
+guestList.unshift("Maria");
+console.log("Se agrega invitado al inicio:",guestList.join(" - "));
+guestList.splice(1,1,"Enrique");
+console.log("Se reemplaza al segundo invitado:",guestList.join(" - "));
+//console.log(guestList);
+
+/*   2. FIFO (First-In, First-Out) - Cola (Queue)
+   Concepto: El primer elemento en entrar es el primero en salir.
+*/
+const printQueue = [];
+printQueue.push("thesis.pdf");
+printQueue.push("meme.png");
+printQueue.push("invoice.docx");
+console.log("Cola de impresión:", printQueue); // ["thesis.pdf", "meme.png", "invoice.docx"]
+// La impresora termina el primer trabajo (shift)
+const printingNow = printQueue.shift();
+console.log(`Imprimiendo: ${printingNow}`); // thesis.pdf (El primero que llegó)
+
+
+/* ================================================================
+ Ejercicio:
+   Crea un array llamado 'taskList' para gestionar tareas.
+   1. Agrega 3 tareas usando 'push'.
+   2. Muestra la lista completa de tareas.
+   3. Las tareas normales se atienden en orden de llegada (FIFO)
+   3.1 Retira (elimina) la primera tarea de la lista y muéstrala.
+   4. No dan un tarea URGENTE que debe ser atendido inmediatamente.
+    Por lo que debes poner al inicio de la lista.
+   5. Muestra la lista actualizada.
+   6. Atiende (elimina) la primera tarea de la lista y muéstrala.
+*/
+
+const taskList = [];
+taskList.push("Comprar verdura");
+taskList.push("Traer tortillas");
+taskList.push("Lavar ropa");
+console.log("Lista inicial: ",taskList.join(" - "));
+firstTask = taskList.shift();
+console.log("Tarea 1 terminada: "+ firstTask);
+taskList.unshift("Comprar garrafón");
+console.log("Se añadió una tarea urgente: ",taskList.join(" - "));
+firstTask = taskList.shift();
+console.log("Tarea terminada: "+ firstTask);
+console.log("Tareas por hacer: ",taskList.join(" - "));
+
+/* ================================================================
+   BLOQUE 3: BUCLES (LOOPS) 
+   ================================================================
+   Estructuras que repiten un bloque de código mientras una condición sea verdadera.
+*/
+// --- 1. Ciclo FOR (Controlado) ---
+// Úsalo cuando sabes cuántas veces quieres repetir algo (ej. recorrer un array).
+// Sintaxis: for (expresión_inicial; condición; expresión_final) { ... }
+// Imprimier los números del 1 al 5
+for(let i = 1; i <=5 ; i++ ) {
+    console.log(`Número ${i}`);
+}
+
+// ------------------- Uso de break en ciclos ----------------------------
+// break detiene la ejecución de la iteración en curso y termina el ciclo.
+for(let i = 1; i <=10 ; i++ ) {
+    if(i === 6) {
+        console.log("¡Se alcanzó el número 6");
+        break; 
+    }
+      console.log(`(con break) Número ${i}`);
+}
+
+// =====================================================
+ let jiteration;
+for ( jiteration = 0; jiteration < 3; jiteration++ ) {
+   console.log("For loop", jiteration ); //
+}
+console.log("Final", jiteration); //
+
+// TODO: RETO FINAL (Simulación de Cajero)
+// Tienes un array de movimientos: [100.00, -50.00, 200.00, -100.00]
+// 1. Usa un ciclo FOR, o WHILE o FOR-OF para recorrer los movimientos.
+// 2. Suma los valores a una variable 'totalBalance'.
+// 3. Imprime el balance final.
+const transactions = [100.00, -50.00, 200.00, -100.00, 500.00];
+let totalBalance = 0;
+transactions.forEach(transaction => totalBalance += transaction );
+console.log("Balance final: "+totalBalance);
