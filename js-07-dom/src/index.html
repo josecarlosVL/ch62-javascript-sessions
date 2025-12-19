@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap w/ Vite</title>
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <header id="main-header">
+
+    </header>
+    <div class="container py-4 px-3 mx-auto">
+      <h1 class="bg-warning">Hello, Bootstrap and Vite!</h1>
+      <button class="btn btn-primary">Primary button</button>
+      <button class="btn btn-secondary">Secondary button</button>
+      <button class="btn btn-success">Success button</button>
+      <button class="btn btn-warning">Warning button</button>
+    </div>
+    <main class="container" id="main-section">
+      <div class="row">
+        <div class="col-6 d-none d-md-block">
+          <img src="/img/tiger.png" alt="tiger image" class="img-fluid" id="principal-img">
+        </div>
+        <div class="col-6">
+          <form action="" class="row" id="task-form">
+            <input type="text" class="form-control" id="task-title" name="task-title" placeholder="Nueva Tarea">
+            <input type="text" class="form-control" id="assignedTo" name="assignedTo" placeholder="Assigned To:">
+            <input type="date" class="form-control" id="date" name="date" placeholder='2025-12-18'>
+            <button type="submit" class="btn btn-warning">Agregar tarea</button>
+        
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
